@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Осенний спорткар на CSS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at 80% 22%, #ffe082 0 32px, rgba(255, 224, 130, 0.2) 33px 50px, transparent 51px),
+        repeating-linear-gradient(90deg, #cfd8dc 0 40px, transparent 40px 80px) 0 calc(100% - 48px) / 100% 6px no-repeat,
+        linear-gradient(#37474f, #263238) 0 100% / 100% 100px no-repeat,
+        linear-gradient(#d84315, #bf360c) 0 calc(100% - 100px) / 100% 35px no-repeat,
+        linear-gradient(to bottom, #90a4ae, #cfd8dc 70%, #eceff1);
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% calc(100% - 110px), #ff8f00 0 6px, transparent 7px),
+        radial-gradient(circle at 28% calc(100% - 105px), #fbc02d 0 7px, transparent 8px),
+        radial-gradient(circle at 52% calc(100% - 115px), #e65100 0 6px, transparent 7px),
+        radial-gradient(circle at 74% calc(100% - 108px), #ffb300 0 8px, transparent 9px),
+        radial-gradient(circle at 25% 18%, rgba(255,255,255,0.6) 0 35px, transparent 36px),
+        radial-gradient(circle at 30% 16%, rgba(255,255,255,0.6) 0 45px, transparent 46px),
+        radial-gradient(circle at 36% 19%, rgba(255,255,255,0.6) 0 30px, transparent 31px);
+    }
+
+    .car {
+      position: absolute;
+      bottom: 85px;
+      width: 200px;
+      height: 62px;
+      background:
+        linear-gradient(115deg, #263238 0 65%, transparent 66%) 65px 12px / 70px 18px no-repeat,
+        linear-gradient(120deg, transparent 15%, #ff6f00 16% 80%, transparent 81%) 45px 8px / 105px 26px no-repeat,
+        linear-gradient(#212121, #212121) 12px 16px / 8px 18px no-repeat,
+        linear-gradient(#e65100, #bf360c) 0 12px / 28px 6px no-repeat,
+        linear-gradient(#212121, #212121) 75px 40px / 24px 10px no-repeat,
+        linear-gradient(to right, #e65100, #ff8f00) 5px 32px / 195px 24px no-repeat;
+      border-radius: 10px 45px 6px 12px;
+      animation: drive 2.5s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+    }
+
+    .car::before {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 26px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #212121 0 4px, #b0bec5 5px 11px, #111 12px);
+      box-shadow:
+        112px 0 0 -11px #212121,
+        112px 0 0 -5px #b0bec5,
+        112px 0 0 0 #111;
+    }
+
+    .car::after {
+      content: "";
+      position: absolute;
+      top: 38px;
+      right: 4px;
+      width: 14px;
+      height: 6px;
+      background: #e0f7fa;
+      border-radius: 2px 8px 2px 2px;
+      transform: skewX(-20deg);
+      box-shadow:
+        18px 2px 18px 5px rgba(224, 247, 250, 0.85),
+        -182px -2px 0 0 #d50000;
+    }
+
+    @keyframes drive {
+      0% {
+        left: -200px;
+      }
+      100% {
+        left: calc(100vw - 250px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="car"></div>
+
+</body>
+</html>
